@@ -28,7 +28,7 @@ export default function Home() {
 
   const [createShipmentModal, setCreateShipmentModal] = useState(false);
   const [openProfile, setOpenProfile] = useState(false);
-  const [startModal, setstartModal] = useState(false);
+  const [startModal, setStartModal] = useState(false);
   const [completeModal, setCompleteModal] = useState(false);
   const [getModal, setGetModal] = useState(false);
 
@@ -51,6 +51,7 @@ export default function Home() {
         setCompleteModal={setCompleteModal}
         setGetModal={setGetModal}
         startModal={startModal}
+        setStartModal={setStartModal}
       />
       <Table
         setCreateShipmentModal={setCreateShipmentModal}
@@ -79,7 +80,7 @@ export default function Home() {
       />
       <StartShipment
         startModal={startModal}
-        setstartModal={setstartModal}
+        setStartModal={setStartModal}
         startShipment={startShipment}
       />
       <Footer />
