@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 
+import { NavBar, Footer } from "@/components";
 import {
   Table,
   Form,
@@ -44,6 +45,7 @@ export default function Home() {
 
   return (
     <div>
+      <NavBar />
       <Services
         setOpenProfile={setOpenProfile}
         setCompleteModal={setCompleteModal}
@@ -80,6 +82,7 @@ export default function Home() {
         setstartModal={setstartModal}
         startShipment={startShipment}
       />
+      <Footer />
     </div>
   );
 }
