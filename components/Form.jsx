@@ -15,6 +15,7 @@ const Form = ({
   const createItem = async () => {
     try {
       await createShipment(shipment);
+      window.location.reload();
     } catch (error) {
       console.log(error);
     }

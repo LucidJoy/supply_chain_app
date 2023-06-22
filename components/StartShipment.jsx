@@ -6,8 +6,8 @@ const StartShipment = ({ startModal, setStartModal, startShipment }) => {
     index: "",
   });
 
-  const startShipping = () => {
-    startShipment(getProduct);
+  const startShipping = async () => {
+    await startShipment(getProduct);
     window.location.reload();
   };
 
