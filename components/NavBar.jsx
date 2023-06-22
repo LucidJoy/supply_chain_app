@@ -45,7 +45,7 @@ const NavBar = () => {
           <div className='md:hidden'>
             <button
               className='menu-btn text-gray-500 hover:text-gray-800'
-              onclick={() => setState(!state)}
+              onClick={() => setState(!state)}
             >
               {state ? "icon1" : "icon2"}
             </button>

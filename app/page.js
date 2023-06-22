@@ -19,7 +19,7 @@ export default function Home() {
   const {
     currentUser,
     createShipment,
-    getAllShipment,
+    getAllShipments,
     completeShipment,
     getShipment,
     startShipment,
@@ -34,14 +34,22 @@ export default function Home() {
 
   const [allShipmentData, setAllShipmentData] = useState();
 
-  // useEffect(() => {
-  //   const getCampaignsData = getAllShipment();
+  useEffect(() => {
+    const fetchAllShipments = async () => {
+      const data = await getAllShipments();
+      setAllShipmentData(data);
 
-  //   return async () => {
-  //     const allData = await getCampaignsData();
-  //     setAllShipmentData(allData);
-  //   };
-  // }, []);
+      console.log("all shipments --> ", data);
+    };
+
+    fetchAllShipments();
+    // const getCampaignsData = getAllShipment();
+
+    // return async () => {
+    //   const allData = await getCampaignsData();
+    //   setAllShipmentData(allData);
+    // };
+  }, []);
 
   return (
     <div>

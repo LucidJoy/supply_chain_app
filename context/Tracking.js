@@ -5,7 +5,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 
 import tracking from "../context/Tracking.json";
-const contractAddress = "0x5fbdb2315678afecb367f032d93f642f64180aa3";
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const contractABI = tracking.abi;
 
 const fetchContract = (signerOrProvider) =>
@@ -38,7 +38,7 @@ export const TrackingProvider = ({ children }) => {
         }
       );
 
-      await createItem().wait();
+      await createItem.wait();
       console.log(createItem);
     } catch (error) {
       console.log(error);
