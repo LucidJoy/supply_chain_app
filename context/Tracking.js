@@ -5,8 +5,10 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 
 import tracking from "../context/Tracking.json";
-const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512";
 const contractABI = tracking.abi;
+
+// 0x70997970C51812dc3A010C7d01b50e0d17dc79C8
 
 const fetchContract = (signerOrProvider) =>
   new ethers.Contract(contractAddress, contractABI, signerOrProvider);
@@ -84,8 +86,6 @@ export const TrackingProvider = ({ children }) => {
   };
 
   const completeShipment = async (completeShip) => {
-    console.log(completeShip);
-
     const { receiver, index } = completeShip;
     try {
       if (!window.ethereum) return alert("Insall metamask");
@@ -143,7 +143,7 @@ export const TrackingProvider = ({ children }) => {
   };
 
   const startShipment = async (getProduct) => {
-    const { receiver, index } = getProduct();
+    const { receiver, index } = getProduct;
 
     try {
       if (!window.ethereum) return alert("Insall metamask");
@@ -157,7 +157,7 @@ export const TrackingProvider = ({ children }) => {
       const signer = provider.getSigner();
       const contract = fetchContract(signer);
 
-      const shipment = await contract.shipment(
+      const shipment = await contract.startShipment(
         accounts[0],
         receiver,
         index * 1
